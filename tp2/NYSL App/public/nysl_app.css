@@ -1,0 +1,368 @@
+body {
+  background-image: url('imagenes/soccer-field-grass_bg.jpg');
+  background-repeat: repeat;
+}
+
+.myContainer {
+  margin-left: 5%;
+  margin-right: 5%;
+  width: 90%;
+}
+
+header {
+  background-color: black;
+  border: solid 5px white;
+  border-radius: 0.1em;
+  height: 10%;
+  background-image: url('imagenes/nysl_logo.png');
+  background-size: 4em;
+  background-repeat: no-repeat;
+  background-position-x: 13%;
+  background-position-y: 50%;
+
+
+}
+
+#nysl{
+  text-shadow: none;
+}
+
+#logo {
+  height: 10%;
+  width: 10%;
+}
+
+h1 {
+  font-size: 6em;
+  font-family: Arial Rounded Bold;
+}
+
+h2 {
+  font-size: 4em;
+}
+
+p {
+  font-size: 1.7em;
+}
+
+h1,
+h2,
+p {
+  color: white;
+  font: Arial Rounded;
+  text-decoration: none;
+
+}
+.space1,.space2{
+  display:inline-block;
+}
+.space1{
+  width:20%;  
+}
+.space2{
+  width:30%;  
+}
+p,fieldset>label{
+  font-size: 1.5em;
+}
+
+.textInfo{
+  display:inline;
+}
+
+.textInfoLeft{
+  margin-left:0;
+}
+
+.textInfoRight{
+  margin-right:0;
+}
+
+.card {
+  background-image: url('imagenes/soccer-field-grass_bg.jpg');
+  background-repeat: repeat;
+  border: none;
+}
+
+
+
+#filtersCard,
+#filters,
+fieldset {
+  background-image: url('imagenes/soccer-field-grass_buttons.jpg');
+  background-repeat: repeat;
+
+}
+
+#filtersCard {
+  padding-bottom: 2em;
+}
+
+form,#filtersCard,.card-body{
+  border-radius: 1em;
+}
+
+.card-header,
+#filtersButton,
+.months,
+.months:hover {
+  background-image: url('imagenes/soccer-field-grass_buttons.jpg');
+  margin-top: 4%;
+  border: solid 0.5em white;
+  border-radius: 1em;
+}
+
+.collapse {
+  background-image: url('imagenes/soccerfield-horizontal.png');
+  background-size: 100%;
+  border: solid 0.5em white;
+  border-radius: 1em;
+  border-top: none;
+
+}
+
+iframe {
+  width: 50%;
+  height: 30em;
+  margin-left:25%
+}
+
+a {
+  text-decoration: none;
+}
+
+.months,
+.months:hover {
+  margin-top: 20%;
+}
+
+.btn,
+.btn-link:hover {
+  width: 100%;
+  text-decoration: none;
+}
+
+fieldset>label,
+p,
+h1,
+h2,h3 {
+  text-shadow:
+    -0.1em -0.1em 0 #000,
+    0.1em -0.1em 0 #000,
+    -0.1em 0.1em 0 #000,
+    0.1em 0.1em 0 #000;
+}
+
+input {
+  width: 0.3em;
+  height: 0.3em;
+}
+
+fieldset>label {
+  color: white;
+  font-size: 200%;
+  margin-bottom: 5%;
+}
+
+#teamsCheckboxes>input {
+  margin-left: 30%;
+}
+
+footer {
+  margin-top: 30%;
+}
+
+@media (max-width: 768px) {
+
+  #logo {
+    width:3.8em;
+    margin-top:0.5em;
+  }
+
+  h1 {
+    font-size: 3.8em;
+    font-family: Arial Rounded Bold;
+  }
+
+  .collapse{
+    background-image: url('imagenes/soccerfield-vertical.png');
+  }
+
+  h2 {
+    font-size: 3em;
+  }
+
+  h3{
+    font-size: 2.1em;
+  }
+
+  p {
+    font-size: 1.1em;
+  }
+  
+  .space1,.space2{
+    display:none;
+  }
+  .textInfo{
+    display:block;
+  }
+
+  .card-body>p{
+    margin-left:2em;
+  }
+
+  .card {
+    background-image: url('imagenes/soccer-field-grass_bg.jpg');
+    background-repeat: repeat;
+    border: none;
+  }
+
+
+
+  #filtersCard,
+  #filters,
+  fieldset {
+    background-image: url('imagenes/soccer-field-grass_buttons.jpg');
+    background-repeat: repeat;
+  }
+
+  #filtersCard {
+    padding-bottom: 2em;
+  }
+
+
+  #filtersButton,
+  .months,
+  .months:hover,.card-header {
+    background-image: url('imagenes/soccer-field-grass_buttons.jpg');
+    margin-top: 4%;
+    border: solid 0.2em white;
+    border-radius: 1em;
+  }
+
+  .collapse {
+    background-image: url('imagenes/soccerfield1.png');
+    background-size: 100%;
+    border: solid 0.2em white;
+    border-radius: 1em;
+    border-top: none;
+
+  }
+
+  #filters{
+    border: solid 0.2em white;
+    border-radius: 1em;
+  }
+
+  iframe {
+    width: 75%;
+    height: 12em;
+    margin-left:12.5%;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  .months,
+  .months:hover {
+    margin-top: 20%;
+  }
+
+  .btn,
+  .btn-link:hover {
+    width: 100%;
+    text-decoration: none;
+  }
+
+  fieldset>label,
+  p,
+  h1,
+  h2,h3 {
+    text-shadow:
+      -0.1em -0.1em 0 #000,
+      0.1em -0.1em 0 #000,
+      -0.1em 0.1em 0 #000,
+      0.1em 0.1em 0 #000;
+  }
+
+  input {
+    width: 1em;
+    height: 1em;
+  }
+
+  fieldset>label {
+    color: white;
+    font-size: 1em;
+    margin-bottom: 5%;
+  }
+
+  #teamsCheckboxes>input {
+    margin-left: 1em;
+    margin-bottom:1em;
+
+  }
+
+  #locationsCheckboxes>label{
+    margin-bottom:1em;
+  }
+
+  footer {
+    margin-top: 30%;
+  }
+
+}
+
+@media (min-width:480px){
+  .collapse{
+    background-image: url('imagenes/soccerfield-horizontal.png');
+  }
+}
+
+
+@media (min-width: 560px) and (max-width: 1050px){
+  
+  .space1,.space2{
+    display:inline-block;
+  }
+  .space1{
+    width:20%;  
+  }
+  .space2{
+    width:30%;  
+  }
+  p,fieldset>label{
+    font-size: 1.5em;
+  }
+  
+  .textInfo{
+    display:inline;
+  }
+  
+  .textInfoLeft{
+    margin-left:0;
+  }
+  
+  .textInfoRight{
+    margin-right:0;
+  }
+
+  
+  iframe {
+    width: 50%;
+    height: 20em;
+    margin-left:25%;
+  }
+}
+
+@media (min-width: 560px) and (max-width: 768px){
+  iframe {
+    width: 75%;
+    height: 14em;
+    margin-left:12.5%;
+  }
+}
+
+/*landscape*/
+
+
