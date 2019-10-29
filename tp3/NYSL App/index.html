@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if (gt IEMobile 7)|!(IEMobile)]><!-->
+<!--<html class="no-js">➥
+<![endif]-->
+<html lang="en">
+
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"/>
+  <link rel="apple-touch-icon" sizes="196x196" href="imagenes/nysl_logo/.png"/>
+  <link rel="shortcut icon" sizes="196x196" href="imagenes/nysl_logo.png"/>
+
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="mobile-web-app-capable" content="yes"/>
+
+  <link rel="stylesheet" href="nysl_app.css">
+  <title>Home of NYSL</title>
+</head>
+
+<body>
+
+  <div class="myContainer" id="app">
+    <header class="row">
+      <div class="d-inline col-4"></div>
+      <h1 class="d-inline col-8" id="nysl">NYSL</h1>
+    </header>
+    <h2 class="text-center mt-5">SCHEDULE</h2>
+
+
+    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#filters" aria-expanded="false"
+      aria-controls="filters" id="filtersButton">
+      <h3>Filter Options</h3>
+    </button>
+
+    <div class="collapse mb-1" id="filters">
+      <div class="card card-body" id="filtersCard">
+        <form class="row" id="checkboxes">
+          <fieldset class="d-inline col-6" id="teamsCheckboxes">
+
+            <label>Filter by Team: </label>
+            <br>
+            <label class="teamLabel">U1</label>
+            <input type="checkbox" name="teams" value="U1" checked onchange="createSchedule()">
+            <br>
+            <label class="teamLabel">U2</label>
+            <input type="checkbox" name="teams" value="U2" checked onchange="createSchedule()">
+            <br>
+            <label class="teamLabel">U3</label>
+            <input type="checkbox" name="teams" value="U3" checked onchange="createSchedule()">
+            <br>
+            <label class="teamLabel">U4</label>
+            <input type="checkbox" name="teams" value="U4" checked onchange="createSchedule()">
+            <br>
+            <label class="teamLabel">U5</label>
+            <input type="checkbox" name="teams" value="U5" checked onchange="createSchedule()">
+            <br>
+            <label class="teamLabel">U6</label>
+            <input type="checkbox" name="teams" value="U6" checked onchange="createSchedule()">
+
+
+            <fieldset >
+              <label>Filter by Time:
+                <br>
+                <select id="timeDropdown" onchange="createSchedule()">
+                  <option value="Any">Any</option>
+                  <option value="9:30 a.m.">9:30 a.m.</option>
+                  <option value="1:00 p.m.">1:00 p.m.</option>
+                </select>
+              </label>
+              <!--
+            <label>Filter by time: </label>
+            <br>
+            <label>9:30 a.m.</label>
+            <input type="checkbox" name="time" value="9:30 a.m." checked onchange="createSchedule()">
+            <br>
+            <label>1:00 p.m.</label>
+            <input type="checkbox" name="time" value="1:00 p.m." checked onchange="createSchedule()">-->
+            </fieldset>
+          </fieldset> 
+
+            <fieldset class="d-inline col-6" id="locationsCheckboxes">
+              <label>Filter by location: </label>
+              <br>
+              <label>AJ Katzenmaier</label>
+              <input type="checkbox" name="locations" value="AJ Katzenmaier" checked onchange="createSchedule()">
+              <br>
+              <label>Greenbay</label>
+              <input type="checkbox" name="locations" value="Greenbay" checked onchange="createSchedule()">
+              <br>
+              <label>Howard A Yeager</label>
+              <input type="checkbox" name="locations" value="Howard A Yeager" checked onchange="createSchedule()">
+              <br>
+              <label>Marjorie P Hart</label>
+              <input type="checkbox" name="locations" value="Marjorie P Hart" checked onchange="createSchedule()">
+              <br>
+              <label>North</label>
+              <input type="checkbox" name="locations" value="North" checked onchange="createSchedule()">
+              <br>
+              <label class="mb-2">South</label>
+              <input type="checkbox" name="locations" value="South" checked onchange="createSchedule()">
+
+            </fieldset>
+        </form>
+      </div>
+    </div>
+
+    <div v-for="(month, index) in scheduleVue">
+      <button class="btn btn-primary months" type="button" data-toggle="collapse" v-bind:data-target="'#month'+index"
+        aria-expanded="false" v-bind:aria-controls="'month'+index">
+        <h2 class="text-center">{{month.month}}</h2>
+      </button>
+
+      <div class="collapse" v-bind:id="'month'+index">
+        <div class="card card-body">
+
+          <div class="accordion" id="scheduleAccordion">
+
+            <div class="card" v-for="game in month.monthSchedule">
+              <div class="card-header" v-bind:id="game.gameNumber">
+                <h2>
+                  <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                    v-bind:data-target="game.callMapId" aria-expanded="false" v-bind:aria-controls="game.mapNumber">
+                    <div>
+                      <p class="textInfo textInfoLeft">{{game.team1}} and {{game.team2}}</p>
+                      <div class="space1"></div>
+                      <p class="textInfo textInfoRight"> {{game.school}}</p>
+                    </div>
+                    <div>
+                      <p class="textInfo textInfoLeft">{{game.day}} {{game.date}}</p>
+                      <div class="space2"></div>
+                      <p class="textInfo textInfoRight">{{game.time}}</p>
+                    </div>
+                  </button>
+                </h2>
+              </div>
+
+              <div v-bind:id="game.mapNumber" v-bind:class="game.collapseType" v-bind:aria-labelledby="game.gameNumber"
+                data-parent="#scheduleAccordion">
+                <div class="card-body">
+                  <p>{{game.adress}}</p>
+                  <iframe v-bind:src="game.map_url" allowfullscreen="allowfullscreen"></iframe>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer></footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="/__/firebase/6.2.4/firebase-app.js"></script>
+  <script src="/__/firebase/init.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous">
+    </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+    integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous">
+    </script>
+  <script src="main.js"></script>
+</body>
+
+</html>
